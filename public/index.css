@@ -1,14 +1,76 @@
 * { box-sizing: border-box; }
 html,body,h1,h2,h3,h4,h5,h6,div,p,span{ margin:0; padding:0; }
+.visual{ width:100%; height:100%; }
 
-.carousel__scene {
+.carousel__body {
   margin: 0 auto;
   position: relative;
   top:180px;
-  /* width: 210px;
-  height: 140px; */
-  width:600px;
-  height:300px;
-  border: 1px solid #CCC;
+  width:420px;
+  height:280px;
+  border: 2px solid #CCC;
   perspective: 1000px;
 }
+.carousel__scene{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform: rotateY(0deg) translateZ(-364px);  
+}
+.carousel__cell{
+  position: absolute;
+  width:100%;
+  height:100%;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: transform 1s, opacity 1s;
+}
+
+.carousel__roof{
+  position:absolute;
+  top:-100px;
+  width:100%;
+  height:30px;
+  border: 2px solid #CCC;
+}
+
+.carousel__cell:nth-child(1) { 
+  background: hsla(0, 100%, 50%, 0.8); 
+  transform: rotateY(0deg) translateZ(364px);  
+}
+.carousel__cell:nth-child(1) .carousel__roof{ background: hsla(0, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(2) { 
+  background: hsla(40, 100%, 50%, 0.8); 
+  transform: rotateY(60deg) translateZ(364px);
+}
+.carousel__cell:nth-child(2) .carousel__roof{ background: hsla(40, 100%, 50%, 0.8); }
+
+
+.carousel__cell:nth-child(3) { 
+  background: hsla(80, 100%, 50%, 0.8); 
+  transform: rotateY(120deg) translateZ(364px);
+}
+.carousel__cell:nth-child(3) .carousel__roof{ background: hsla(80, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(4) { 
+  background: hsla(120, 100%, 50%, 0.8); 
+  transform: rotateY(180deg) translateZ(364px);
+}
+.carousel__cell:nth-child(4) .carousel__roof{ background: hsla(120, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(5) { 
+  background: hsla(160, 100%, 50%, 0.8); 
+  transform: rotateY(240deg) translateZ(364px);
+}
+.carousel__cell:nth-child(5) .carousel__roof{ background: hsla(160, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(6) { 
+  background: hsla(200, 100%, 50%, 0.8); 
+  transform: rotateY(300deg) translateZ(364px);
+}
+.carousel__cell:nth-child(6) .carousel__roof{ background: hsla(200, 100%, 50%, 0.8); }
