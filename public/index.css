@@ -192,6 +192,18 @@ body *{ box-sizing:border-box; }
   width:80px;
   height:80px;
 }
+
+.ballerina__head__face::before{
+  content: '';
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 3px 4px 7px rgba(0,0,0,0.05);
+  position: absolute;
+  left: 6px;
+  top: 7px;
+}
 .ballerina__head__face__eyes:first-child{
   position: absolute;
   top: 40px;
@@ -300,7 +312,7 @@ body *{ box-sizing:border-box; }
   height: 100px;
 }
 
-.ballerina__body__arm::before{
+.ballerina__body__arm__left{
   content: '';
   display: block;
   width: 170px;
@@ -316,8 +328,18 @@ body *{ box-sizing:border-box; }
   border-top-color: transparent;
   animation: ani__ballerina__arm__left 2s alternate-reverse linear;
 } 
+.ballerina__body__arm__left::before{
+  content: '';
+  display: block;
+  width: 144px;
+  height: 43px;
+  position: absolute;
+  top: -19px;
+  box-shadow: 10px 7px 1px rgba(0,0,0,0.05);
+  border-radius: 50%;
+}
 
-.ballerina__body__arm::after{
+.ballerina__body__arm__right{
   content: '';
   display: block;
   width: 170px;
@@ -333,6 +355,18 @@ body *{ box-sizing:border-box; }
   border-top-color: transparent;
   animation: ani__ballerina__arm__right 2s infinite alternate-reverse linear;
 } 
+.ballerina__body__arm__right::before{
+  content: '';
+  display: block;
+  width: 144px;
+  height: 43px;
+  position: absolute;
+  top: -19px;
+  right:0;
+  box-shadow: 10px 7px 1px rgba(0,0,0,0.05);
+  border-radius: 50%;
+  transform: rotateY(180deg);
+}
 
 .ballerina__body__lower{
   position:absolute;
@@ -374,18 +408,15 @@ body *{ box-sizing:border-box; }
   border-radius:0 0 35px 35px;
   animation: ani__ballerina__leg 1s 1.5s infinite alternate linear;
 }
-.ballerina__leg__left::after{
-  position:absolute;
-  top:50%;
-  left:0;
-  content:'';
-  display:block;
-  width:25px;
-  height:25px;
-  border-radius: 50%;
-  background-color:transparent;
-  border: 10px solid rgb(255, 204, 204);
-  box-shadow: 1px 1px 1px #ffb7b7;
+.ballerina__leg__left::before{
+  content: '';
+    display: block;
+    border: 10px solid rgba(0,0,0,0.03);
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
 }
 .ballerina__leg__shoes{
   position: absolute;
@@ -421,18 +452,14 @@ body *{ box-sizing:border-box; }
   background-color:#ffcccc;
   border-radius:0 0 35px 35px;
 }
-.ballerina__leg__right::after{
-  position:absolute;
-  top:50%;
-  right:1px;
-  content:'';
-  display:block;
-  width:25px;
-  height:25px;
-  border-radius: 50%;
-  background-color:transparent;
-  border: 10px solid rgb(255, 204, 204);
-  box-shadow: 1px 1px 1px #ffb7b7;
+
+.ballerina__leg__right::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 35px 35px;
+  box-shadow: 3px 1px 5px rgba(0,0,0,0.05);
 }
 /* 애니메이션 */
 /* @keyframes ani__turn{
